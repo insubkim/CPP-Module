@@ -1,0 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/05 18:39:56 by inskim            #+#    #+#             */
+/*   Updated: 2023/05/05 19:02:19 by inskim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <iostream>
+
+class Megaphone
+{
+private:
+	const static char *default_msg;
+public:
+	void	play(void)
+	{
+		std::cout << default_msg << std::endl;
+	}
+};
+
+int	main(int argc, char *argv[])
+{
+	Megaphone m;
+	Megaphone::default_msg = = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	if (--argc == 0)
+		m.play();
+	else
+	{
+		while (argc--)
+		{
+			argv++;
+		}
+	}
+	return (0);
+}
