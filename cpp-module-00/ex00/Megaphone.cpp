@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 18:39:56 by inskim            #+#    #+#             */
-/*   Updated: 2023/05/12 18:28:28 by inskim           ###   ########.fr       */
+/*   Updated: 2023/05/13 03:06:23 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,13 @@ class Megaphone
 
 void	Megaphone::turn_on(void)
 {
-	{
-		std::cout << default_msg << std::endl;
-	}
+	std::cout << default_msg << std::endl;
 }
 
 void	Megaphone::turn_on(char	*msg)
 {
-	{
-		std::cout << msg;
-	}
+	while (*msg)
+		std::cout << (char)toupper(*msg++);
 }
 
 const char	*Megaphone::default_msg = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";

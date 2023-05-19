@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: insub <insub@student.42.fr>                +#+  +:+       +#+        */
+/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 03:57:29 by inskim            #+#    #+#             */
-/*   Updated: 2023/05/13 16:42:13 by insub            ###   ########.fr       */
+/*   Updated: 2023/05/20 05:30:10 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Contact::Contact(const Contact& other){
 	secret = other.secret;
 }
 
+//setter
 std::string Contact::get_first_name(void){
 	return (this->first_name);	
 }
@@ -46,4 +47,12 @@ std::string Contact::get_phone_number(void){
 
 std::string Contact::get_secret(void){
 	return (this->secret);	
+}
+
+void Contact::display(void){
+	std::cout << first_name << "|" << last_name << "|" << nick_name << "|" << phone_number << "|" << secret << endl;
+}
+
+void Contact::display_name(void){
+
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: insub <insub@student.42.fr>                +#+  +:+       +#+        */
+/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 02:59:27 by inskim            #+#    #+#             */
-/*   Updated: 2023/05/13 16:39:34 by insub            ###   ########.fr       */
+/*   Updated: 2023/05/20 05:18:34 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
 
 class PhoneBook{
 private:
-	Contact	c[8];
-	
+	Contact::Contact	c[8];
+	int	last;
 public:
 	PhoneBook(void);
-	void	set_contact(Contact c);
-	Contact	&get_contact(int	index);
+	void	add_contact(Contact::Contact contact);
+	void	display_contact(int	index);
+	void	display_list(void);
 };
 
 #endif

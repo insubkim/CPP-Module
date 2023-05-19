@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: insub <insub@student.42.fr>                +#+  +:+       +#+        */
+/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 03:01:17 by inskim            #+#    #+#             */
-/*   Updated: 2023/05/13 16:40:57 by insub            ###   ########.fr       */
+/*   Updated: 2023/05/20 05:24:21 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACT_HPP
 
 #include <string>
+#include <iostream>
 
 class	Contact{
 private :
@@ -30,6 +31,8 @@ public :
 	std::string	get_nick_name(void);
 	std::string	get_phone_number(void);
 	std::string	get_secret(void);
+	void Contact::display(void);
+	void Contact::display_name(void);
 };
 
 #endif
