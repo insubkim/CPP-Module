@@ -1,10 +1,10 @@
-NAME = BraiiiiiiinnnzzzZ
+NAME = Moar_brainz!
 
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 
-SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS = main.cpp Zombie.cpp zombieHorde.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
