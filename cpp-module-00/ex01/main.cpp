@@ -3,25 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: insub <insub@student.42.fr>                +#+  +:+       +#+        */
+/*   By: inskim <inskim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 03:07:34 by inskim            #+#    #+#             */
-/*   Updated: 2023/05/13 16:32:52 by insub            ###   ########.fr       */
+/*   Updated: 2023/06/13 17:21:07 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include <iostream>
+#include "PhoneBook.hpp"
 
-void	hi(Contact c){
-
-	std::cout << "new\n" << c.get_first_name() << c.get_last_name() << c.get_nick_name() << c.get_secret() << std::endl;
-}
-
-int	main(int argc, char **argv){
-	Contact c("kim", "insub", "inskim", "fuck");
-	std::cout << c.get_first_name() << c.get_last_name() << c.get_nick_name() << c.get_secret() << std::endl;
-	hi(c);
-	system("leaks a.out");
+int	main(void){
+	std::string cmd;
+	PhoneBook p;
+	while (1){
+		std::cin >> cmd;
+		if (cmd == "ADD"){
+			p.add();
+		}else if (cmd == "SEARCH"){
+			p.search();
+		}else if (cmd == "EXIT"){
+			break ;
+		}else{
+			std::cout << "only put ADD or SEARCH or EXIT" << std::endl;
+		}
+	}
 	return (0);
 }

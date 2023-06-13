@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: inskim <inskim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 03:57:29 by inskim            #+#    #+#             */
-/*   Updated: 2023/05/20 05:30:10 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/13 16:34:37 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+
+Contact::Contact(void){
+	
+}
 
 Contact::Contact(std::string first_name, std::string last_name, std::string nick_name, std::string phone_number ,std::string secret){
 	this->first_name = first_name;
@@ -28,7 +32,6 @@ Contact::Contact(const Contact& other){
 	secret = other.secret;
 }
 
-//setter
 std::string Contact::get_first_name(void){
 	return (this->first_name);	
 }
@@ -47,12 +50,4 @@ std::string Contact::get_phone_number(void){
 
 std::string Contact::get_secret(void){
 	return (this->secret);	
-}
-
-void Contact::display(void){
-	std::cout << first_name << "|" << last_name << "|" << nick_name << "|" << phone_number << "|" << secret << endl;
-}
-
-void Contact::display_name(void){
-
 }
