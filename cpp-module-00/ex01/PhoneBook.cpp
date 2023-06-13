@@ -6,11 +6,13 @@
 /*   By: inskim <inskim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/13 17:36:32 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/13 19:24:41 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <iomanip> 
+#include <limits>
 
 PhoneBook::PhoneBook(void){
 	front = 0;
@@ -35,7 +37,11 @@ std::string	get_line(int f){
 	}
 	std::string s = "";
 	while (s.empty()){
-		std::cin >> s;
+		std::getline(std::cin, s);
+		if (std::cin.eof()){
+			std::cout << "EOF is entered program exit" << std::endl;
+			exit(0);
+		}
 	}
 	return (s);
 }
@@ -58,5 +64,28 @@ void	PhoneBook::add(){
 }
 
 void	PhoneBook::search(){
-	
+	if (size == 0){
+		std::cout << "phone book is empty" << std::endl << std::endl;
+		return ;
+	}
+	for (int i = 0; i < size; i++){
+		std::cout << std::setw(10) << i << "|";
+		std::cout << std::setw(10) << c[i].get_first_name().substr(0, 10) << "|" << std::setw(10) << c[i].get_last_name().substr(0, 10)<< "|" << std::setw(10) << c[i].get_nick_name().substr(0, 10) << std::endl;
+	}
+	int	i = -1;
+	while (i == -1){
+		std::cout << "enter index" << std::endl; 
+		std::cin >> i;	
+		if (std::cin.eof()){
+				std::cout << "EOF is entered program exit" << std::endl;
+				exit(0);
+		}
+		if (i < 0 || i >= size)
+			i = -1;
+	}
+	std::cout << "first name : " << c[i].get_first_name() << std::endl;
+	std::cout << "last name : " << c[i].get_last_name() << std::endl;
+	std::cout << "nick name : " << c[i].get_nick_name() << std::endl;
+	std::cout << "phone number : " << c[i].get_phone_number() << std::endl;
+	std::cout << "secret : " << c[i].get_secret() << std::endl << std::endl;
 }
