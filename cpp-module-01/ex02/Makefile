@@ -2,7 +2,7 @@ NAME = HI_THIS_IS_BRAIN
 
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98 
 
 SRCS = main.cpp
 

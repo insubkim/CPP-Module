@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inskim <inskim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 03:07:34 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/13 19:01:51 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/17 01:26:14 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ int	main(void){
 		if (std::cin.eof()){
 			std::cout << "EOF is entered program exit" << std::endl;
 			break ;
+		}else if (std::cin.fail()){
+			std::cout << "cin fail program exit" << std::endl;
+			break ;
+			
 		}
 		if (cmd == "ADD"){
 			p.add();
