@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 03:01:17 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/17 08:03:58 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/17 08:30:04 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ public :
 	Contact(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber,std::string secret);
 	Contact(const Contact& other);
 	std::string	getFirstName(void) const;
-	std::string getLastName(void) const;
 	std::string getLastName(void) const;
 	std::string	getNickName(void) const;
 	std::string	getPhoneNumber(void) const;

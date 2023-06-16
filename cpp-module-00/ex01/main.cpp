@@ -6,13 +6,13 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 03:07:34 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/17 01:26:14 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/17 08:44:36 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
-#include <iomanip> 
+#include <iomanip>
 
 int	main(void){
 	std::string cmd;
@@ -27,7 +27,6 @@ int	main(void){
 		}else if (std::cin.fail()){
 			std::cout << "cin fail program exit" << std::endl;
 			break ;
-			
 		}
 		if (cmd == "ADD"){
 			p.add();

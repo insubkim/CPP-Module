@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 02:59:27 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/17 08:05:13 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/17 08:43:51 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ private:
 	int	front;
 	int rear;
 	int size;
-	
-	static std::string	get_line(int f){
+
+	static	std::string	get_line(int f){
 		if (f == FIRST_NAME){
 			std::cout << "Put firstname" << std::endl;
 		}else if (f == LAST_NAME){
@@ -56,7 +56,8 @@ private:
 	}
 	
 public:
-	PhoneBook(void);
+	PhoneBook();
+	~PhoneBook();
 	void	add();
 	void	search()const;
 };
