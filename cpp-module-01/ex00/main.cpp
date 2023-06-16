@@ -13,15 +13,15 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-void randomChump(std::string name);
+void randomChump(const std::string name);
 
-Zombie* newZombie(std::string name);
+Zombie* newZombie(const std::string name);
 
 int main(void){
     Zombie a("aa");
     a.announce();
     randomChump("kk");
-    Zombie *j = newZombie("j");
+    const Zombie *j = newZombie("j");
     j->announce();
     delete(j);
     return (0);
