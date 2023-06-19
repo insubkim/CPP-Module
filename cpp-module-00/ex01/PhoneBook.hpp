@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 02:59:27 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/13 17:05:44 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/13 19:37:25 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # define NICK_NAME 3
 # define PHONE_NUMBER 4
 # define SECRET 5
-
-
 
 #include <string>
 #include "Contact.hpp"

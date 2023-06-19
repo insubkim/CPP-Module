@@ -2,7 +2,7 @@ NAME = Moar_brainz!
 
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS = main.cpp Zombie.cpp zombieHorde.cpp
 
