@@ -21,8 +21,8 @@ private:
 public:
     Zombie();
     Zombie(std::string name);
-    void    announce();
-    void    set_name(std::string name);
+    void    announce() const;
+    void    set_name(const std::string name);
 };
 
 #endif

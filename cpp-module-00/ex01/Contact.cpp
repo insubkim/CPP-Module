@@ -3,51 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inskim <inskim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 03:57:29 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/13 16:34:37 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/17 08:04:00 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact::Contact(void){
-	
+Contact::Contact() {}
+
+Contact::Contact(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber ,std::string secret)\
+	: _firstName(firstName), _lastName(lastName), _nickName(nickName), _phoneNumber(phoneNumber), _secret(secret) {}
+
+Contact::Contact(const Contact& other) \
+	: _firstName(other._firstName), _lastName(other._lastName), _nickName(other._nickName), _phoneNumber(other._phoneNumber), _secret(other._secret) {}
+
+std::string Contact::getFirstName(void) const{
+	return (_firstName);	
 }
 
-Contact::Contact(std::string first_name, std::string last_name, std::string nick_name, std::string phone_number ,std::string secret){
-	this->first_name = first_name;
-	this->last_name = last_name;
-	this->nick_name = nick_name;
-	this->phone_number = phone_number;
-	this->secret = secret;
+std::string Contact::getLastName(void) const{
+	return (_lastName);	
 }
 
-Contact::Contact(const Contact& other){
-	first_name = other.first_name;
-	last_name = other.last_name;
-	nick_name = other.nick_name;
-	phone_number = other.phone_number;
-	secret = other.secret;
+std::string Contact::getNickName(void) const{
+	return (_nickName);	
 }
 
-std::string Contact::get_first_name(void){
-	return (this->first_name);	
+std::string Contact::getPhoneNumber(void) const{
+	return (_phoneNumber);	
 }
 
-std::string Contact::get_last_name(void){
-	return (this->last_name);	
-}
-
-std::string Contact::get_nick_name(void){
-	return (this->nick_name);	
-}
-
-std::string Contact::get_phone_number(void){
-	return (this->phone_number);	
-}
-
-std::string Contact::get_secret(void){
-	return (this->secret);	
+std::string Contact::getSecret(void) const{
+	return (_secret);	
 }

@@ -21,12 +21,12 @@
 class HumanB{
 private:
     std::string name;
-    Weapon weapon;
-    int armed;
+    Weapon      *weapon;
+    bool        armed;
 public:
     HumanB(std::string type);
-    void    attack();
-    void    setWeapon(Weapon weapon);
+    void    attack() const;
+    void    setWeapon(Weapon &weapon);
 };
 
 #endif

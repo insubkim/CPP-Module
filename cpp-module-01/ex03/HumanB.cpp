@@ -17,13 +17,13 @@ HumanB::HumanB(std::string name){
     armed = !ARMED;
 }
 
-void    HumanB::attack(){
+void    HumanB::attack() const{
     if (armed == ARMED)
-        std::cout << name << " attacks with their " << weapon.getType() << std::endl;
+        std::cout << name << " attacks with their " << weapon->getType() << std::endl;
     else
         std::cout << name << " is nor armed " <<std::endl;    
 }
-void    HumanB::setWeapon(Weapon weapon){
-    this->weapon = weapon;
+void    HumanB::setWeapon(Weapon &weapon){
+    this->weapon = &weapon;
     armed = ARMED;
 }

@@ -20,11 +20,10 @@
 class HumanA{
 private:
     std::string name;
-    Weapon & weapon;
+    Weapon      *weapon;
 public:
-    HumanA(std::string type, Weapon weapon);
-    void    attack();
-    void    setWeapon(Weapon weapon);
+    HumanA(std::string type, Weapon &weapon);
+    void    attack() const;
 };
 
 #endif

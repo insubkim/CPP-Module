@@ -21,7 +21,7 @@ int main(void){
     Zombie a("aa");
     a.announce();
     randomChump("kk");
-    Zombie *j = newZombie("j");
+    const Zombie *j = newZombie("j");
     j->announce();
     delete(j);
     return (0);
