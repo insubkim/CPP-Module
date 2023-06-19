@@ -13,10 +13,10 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie(std::string name){
+Zombie::Zombie(const std::string name){
     this->name = name;
 }
 
-void    Zombie::announce(void){
+void    Zombie::announce() const{
     std::cout << name << " : BraiiiiiiinnnzzzZ..." << std::endl;
 }
