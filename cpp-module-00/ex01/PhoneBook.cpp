@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/17 08:44:40 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/21 18:04:08 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ void	PhoneBook::search() const{
 	}
 	for (int i = 0; i < size; i++){
 		std::cout << std::setw(10) << i << "|";
-		std::cout << std::setw(10) << c[i]->getFirstName().substr(0, 9) << (c[i]->getFirstName().size() >= 10 ? "." : "") << "|";
-		std::cout << std::setw(10) << c[i]->getLastName().substr(0, 9) << (c[i]->getLastName().size() >= 10 ? "." : "") << "|";
-		std::cout << std::setw(10) << c[i]->getNickName().substr(0, 9) << (c[i]->getNickName().size() >= 10 ? "." : "") << std::endl;
+		std::cout << std::setw(10) << c[i]->getFirstName().substr(0, 9) + (c[i]->getFirstName().size() >= 10 ? "." : "") << "|";
+		std::cout << std::setw(10) << c[i]->getLastName().substr(0, 9) + (c[i]->getLastName().size() >= 10 ? "." : "") << "|";
+		std::cout << std::setw(10) << c[i]->getNickName().substr(0, 9) + (c[i]->getNickName().size() >= 10 ? "." : "") << std::endl;
 	}
 	int	i = -1;
 	std::string input;

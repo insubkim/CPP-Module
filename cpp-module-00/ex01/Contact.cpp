@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 03:57:29 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/17 08:04:00 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/21 15:24:43 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 Contact::Contact() {}
 
 Contact::Contact(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber ,std::string secret)\
-	: _firstName(firstName), _lastName(lastName), _nickName(nickName), _phoneNumber(phoneNumber), _secret(secret) {}
+	: firstName(firstName), lastName(lastName), nickName(nickName), phoneNumber(phoneNumber), secret(secret) {}
 
 Contact::Contact(const Contact& other) \
-	: _firstName(other._firstName), _lastName(other._lastName), _nickName(other._nickName), _phoneNumber(other._phoneNumber), _secret(other._secret) {}
+	: firstName(other.firstName), lastName(other.lastName), nickName(other.nickName), phoneNumber(other.phoneNumber), secret(other.secret) {}
 
 std::string Contact::getFirstName(void) const{
-	return (_firstName);	
+	return (firstName);	
 }
 
 std::string Contact::getLastName(void) const{
-	return (_lastName);	
+	return (lastName);	
 }
 
 std::string Contact::getNickName(void) const{
-	return (_nickName);	
+	return (nickName);	
 }
 
 std::string Contact::getPhoneNumber(void) const{
-	return (_phoneNumber);	
+	return (phoneNumber);	
 }
 
 std::string Contact::getSecret(void) const{
-	return (_secret);	
+	return (secret);	
 }

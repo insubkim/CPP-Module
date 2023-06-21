@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 03:01:17 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/17 08:30:04 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/21 17:58:24 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 class	Contact{
 private :
-	const std::string	_firstName;
-	const std::string	_lastName;
-	const std::string	_nickName;
-	const std::string	_phoneNumber;
-	const std::string	_secret;
+	const std::string	firstName;
+	const std::string	lastName;
+	const std::string	nickName;
+	const std::string	phoneNumber;
+	const std::string	secret;
 public :
 	Contact();
 	Contact(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber,std::string secret);
@@ -32,7 +32,6 @@ public :
 	std::string	getNickName(void) const;
 	std::string	getPhoneNumber(void) const;
 	std::string	getSecret(void) const;
-	Contact& operator=(const Contact&other);
 };
 
 #endif

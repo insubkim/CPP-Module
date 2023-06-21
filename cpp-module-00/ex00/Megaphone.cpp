@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 18:39:56 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/17 07:58:16 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/21 15:22:46 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class Upper
 {
 private:
-	const std::string	_upperString;
+	const std::string	upperString;
 	
 	static std::string convertToUpper(std::string original){
 		for (int i = 0; i < (int)original.size(); i++){
@@ -31,14 +31,14 @@ public:
 	std::string getUpperString() const;
 };
 
-Upper::Upper(std::string originalString) : _upperString(convertToUpper(originalString)){}
+Upper::Upper(std::string originalString) : upperString(convertToUpper(originalString)){}
 
 std::string Upper::getUpperString() const{
-	return _upperString;
+	return upperString;
 }
 
 std::ostream& operator <<(std::ostream &o, const Upper& u){
-	std::cout << u.getUpperString();
+	o << u.getUpperString();
 	return o;
 }
 
