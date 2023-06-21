@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/21 18:04:08 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/21 18:48:31 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,35 @@ PhoneBook::~PhoneBook(){
 	}
 }
 
+const std::string	PhoneBook::get_line(int f){
+		if (f == FIRST_NAME){
+			std::cout << "Put firstname" << std::endl;
+		}else if (f == LAST_NAME){
+			std::cout << "Put lastname" << std::endl;
+		}else if (f == NICK_NAME){
+			std::cout << "Put nickname" << std::endl;
+		}else if (f == PHONE_NUMBER){
+			std::cout << "Put phone number" << std::endl;
+		}else{
+			std::cout << "Put secret" << std::endl;
+		}
+		std::string s = "";
+		while (s.empty()){
+			std::getline(std::cin, s);
+			if (std::cin.eof()){
+				std::cout << "EOF is entered program exit" << std::endl;
+				exit(0);
+			}else if (std::cin.fail()){
+				std::cout << "cin fail program exit" << std::endl;
+				exit(0);
+			}
+		}
+		return (s);
+	}
+
 void	PhoneBook::add(){
 	if (size == PHONEBOOK_SIZE){
+		delete c[front];
 		c[front] = new Contact(get_line(FIRST_NAME), get_line(LAST_NAME), get_line(NICK_NAME), get_line(PHONE_NUMBER), get_line(SECRET));
 		front++;
 		rear++;
