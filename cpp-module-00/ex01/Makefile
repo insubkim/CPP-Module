@@ -7,14 +7,18 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 SRCS = PhoneBook.cpp \
 	Contact.cpp \
 	main.cpp
+
 OBJS = $(SRCS:.cpp=.o)
 
-%.o: %.c
+HEADER = PhoneBook.hpp \
+	Contact.hpp
+
+%.o: %.cpp $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(HEADER)
 	$(CC) $(CFLAGS) $(OBJS) -o $@ 
 
 clean:

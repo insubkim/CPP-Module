@@ -1,14 +1,14 @@
-NAME = Moar_brainz!
+NAME = Harl_2.0
 
 CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp
+SRCS = main.cpp Harl.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-HEADER = Zombie.hpp
+HEADER = Harl.hpp
 
 %.o: %.cpp $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@

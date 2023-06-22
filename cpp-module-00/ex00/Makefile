@@ -6,13 +6,14 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS = Megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
+HEADER = Megaphone.hpp
 
-%.o: %.c
+%.o: %.cpp $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(HEADER)
 	$(CC) $(CFLAGS) $(OBJS) -o $@ 
 
 clean:
