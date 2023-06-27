@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/22 14:44:18 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/27 19:43:58 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void Harl::invalidLevel(){
 	std::cout << "invalid level" << std::endl;
 }
 
-long long	Harl::hash(const std::string level) const{
+long long	Harl::hash(const std::string &level) const{
 	long long hashValue = 0;
 	if (level.size() > 7)
 		return (4);
@@ -49,7 +49,7 @@ long long	Harl::hash(const std::string level) const{
 	return hashValue;
 }
 
-void Harl::complain(std::string level){
+void Harl::complain(const std::string &level){
 	switch (hash(level))
 	{
 	case (DEBUG_HASH_VALUE) :

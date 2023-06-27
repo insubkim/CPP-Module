@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/22 14:49:20 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/27 19:44:08 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ private:
 	void		warning();
 	void		error();
 	void		invalidLevel();
-	long long	hash(const std::string level) const;
+	long long	hash(const std::string &level) const;
 	void		(Harl::*f[5])();
 public:
 	Harl();
-	void complain(std::string level);
+	void complain(const std::string &level);
 };
 
 #endif

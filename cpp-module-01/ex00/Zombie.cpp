@@ -11,10 +11,13 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <iostream>
 
-Zombie::Zombie(const std::string name){
+Zombie::Zombie(const std::string &name){
     this->name = name;
+}
+
+Zombie::~Zombie(){
+    std::cout << name << " Zombie instance destroyed" << std::endl;
 }
 
 void    Zombie::announce() const{

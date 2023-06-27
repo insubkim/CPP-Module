@@ -20,13 +20,13 @@
 
 class HumanB{
 private:
-    std::string name;
-    Weapon      *weapon;
-    bool        armed;
+    std::string     name;
+    const Weapon    *weapon;
+    bool            armed;
 public:
-    HumanB(std::string type);
+    HumanB(const std::string &type);
     void    attack() const;
-    void    setWeapon(Weapon &weapon);
+    void    setWeapon(const Weapon &weapon);
 };
 
 #endif

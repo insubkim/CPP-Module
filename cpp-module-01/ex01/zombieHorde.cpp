@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <iostream>
 
-Zombie* zombieHorde(int N, std::string name){
+Zombie* zombieHorde(int N, const std::string &name){
     if (N <= 0){
         std::cout << "N need to be > 0" << std::endl;
         exit(0);

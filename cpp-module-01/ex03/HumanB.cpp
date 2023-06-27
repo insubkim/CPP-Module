@@ -12,8 +12,9 @@
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name){
+HumanB::HumanB(const std::string &name){
     this->name = name;
+    weapon = nullptr;
     armed = !ARMED;
 }
 
@@ -21,9 +22,9 @@ void    HumanB::attack() const{
     if (armed == ARMED)
         std::cout << name << " attacks with their " << weapon->getType() << std::endl;
     else
-        std::cout << name << " is nor armed " <<std::endl;    
+        std::cout << name << " is not armed " <<std::endl;    
 }
-void    HumanB::setWeapon(Weapon &weapon){
-    this->weapon = &weapon;
+void    HumanB::setWeapon(const Weapon &weapon){
+    this->weapon =  &weapon;
     armed = ARMED;
 }

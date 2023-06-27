@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <iostream>
 
 void randomChump(const std::string name);
 
