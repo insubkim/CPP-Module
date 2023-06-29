@@ -6,18 +6,17 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/22 14:49:09 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/29 11:21:56 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int	main(){
+int	main(int argc, char **argv){
+	if (argc != 2){
+		return 1;
+	}
 	Harl a;
-	a.complain("DEBUG");
-	a.complain("INFO");
-	a.complain("WARNING");
-	a.complain("ERROR");
-	a.complain("ERRO");
+	a.complain(argv[1]);
 	return 0;
 }

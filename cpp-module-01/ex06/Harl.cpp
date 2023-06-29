@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/29 11:09:47 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/29 11:22:29 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,10 @@ void Harl::complain(const std::string &level){
 	{
 	case (DEBUG_HASH_VALUE) :
 		(this->*f[0])();
-		break;
 	case (INFO_HASH_VALUE) :
 		(this->*f[1])();
-		break;
 	case (WARNING_HASH_VALUE) :
 		(this->*f[2])();
-		break;
 	case (ERROR_HASH_VALUE) :
 		(this->*f[3])();
 		break;
