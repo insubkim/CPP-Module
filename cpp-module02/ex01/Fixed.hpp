@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: insub <insub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/29 19:19:51 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/03 22:45:11 by insub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ public :
 	float	toFloat() const;
 private :
 	int	num;
-	static const int fractional_bits;
+	static const int fractional_bits = 8;
 };
+
+std::ostream&	operator<<(std::ostream& o, const Fixed &f);
 
 #endif
 
