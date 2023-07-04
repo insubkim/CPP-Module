@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/29 13:14:16 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/04 15:47:33 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	main(int argc, char **argv){
 	while (((loc = tmp.find(s1, loc))) != std::string::npos){
 		tmp.erase(loc, s1.size());
 		tmp.insert(loc, s2);
+		loc += s2.size();
 	}
 	o << tmp;
 	return 0;
