@@ -14,7 +14,7 @@
 
 HumanB::HumanB(const std::string &name){
     this->name = name;
-    weapon = nullptr;
+    weapon = 0;
     armed = !ARMED;
 }
 
