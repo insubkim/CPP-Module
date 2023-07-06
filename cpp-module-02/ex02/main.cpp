@@ -1,3 +1,4 @@
+    
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -45,5 +46,10 @@ int main( void ) {
     std::cout << i << std::endl;
     Fixed j = Fixed::max(a,c);
     std::cout << j << std::endl;
+    Fixed const d(2);
+    Fixed k = Fixed::max(b, d);
+    std::cout << k << std::endl;
+    
+    
     return 0;
 }

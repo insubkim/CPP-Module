@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/04 17:50:52 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/06 12:04:21 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ public :
 
 static const Fixed&	min(const Fixed &a, const Fixed &b);
 static const Fixed&	max(const Fixed &a, const Fixed &b);
+static Fixed&	min(Fixed &a, Fixed &b);
+static Fixed&	max(Fixed &a, Fixed &b);
 
 private :
 	int	num;

@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/04 17:51:16 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/06 12:03:49 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,12 +120,20 @@ Fixed	Fixed::operator--(int){
 	return tmp;
 }
 
+Fixed&	Fixed::min(Fixed &a, Fixed &b){
+	return a.getRawBits() < b.getRawBits() ? a : b;
+}
+
+Fixed&	Fixed::max(Fixed &a, Fixed &b){
+	return a.getRawBits() < b.getRawBits() ? b : a;
+}
+
 const Fixed&	Fixed::min(const Fixed &a, const Fixed &b){
-	return a.num < b.num ? a : b;
+	return a.getRawBits() < b.getRawBits() ? a : b;
 }
 
 const Fixed&	Fixed::max(const Fixed &a, const Fixed &b){
-	return a.num < b.num ? b : a;
+	return a.getRawBits() < b.getRawBits() ? b : a;
 }
 
 std::ostream&	operator<<(std::ostream& o, const Fixed &f){
