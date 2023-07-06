@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/06 18:56:28 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/06 19:08:16 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#include "ScapTrap.hpp"
 
-#include <iostream>
-#include <string>
+int main(){
+	ScapTrap a("bob");
+	a.takeDamage(1);
+	a.guardGate();
+	a.takeDamage(1);
+	a.attack("SPONGE");
+	ScapTrap b(a);
+	a.attack("SPONGE");
+	ScapTrap c = a;
+	a.attack("SPONGE");
 
-class	ClapTrap 
-{
-public :
-	ClapTrap();
-	ClapTrap(const std::string& name);
-	ClapTrap(const ClapTrap& other);
-	ClapTrap& operator=(const ClapTrap& other);
-	virtual ~ClapTrap();
-
-	virtual void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-
-protected :
-	const std::string	name;
-	unsigned int		hitPoints;
-	unsigned int		energyPoints;
-	unsigned int		attackDamage;
-};
-
-#endif
+	ClapTrap *k = new ScapTrap("new bob");
+	k->attack("new SPONGE");
+	delete k;
+}

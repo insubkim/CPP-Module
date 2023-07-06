@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/06 18:56:28 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/06 18:42:45 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef SCAPTRAP_HPP
+# define SCAPTRAP_HPP
 
-#include <iostream>
-#include <string>
+#include "ClapTrap.hpp"
 
-class	ClapTrap 
+class	ScapTrap : public ClapTrap
 {
-public :
-	ClapTrap();
-	ClapTrap(const std::string& name);
-	ClapTrap(const ClapTrap& other);
-	ClapTrap& operator=(const ClapTrap& other);
-	virtual ~ClapTrap();
-
-	virtual void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-
-protected :
-	const std::string	name;
-	unsigned int		hitPoints;
-	unsigned int		energyPoints;
-	unsigned int		attackDamage;
+public:
+	ScapTrap();	
+	ScapTrap(const std::string& name);
+	ScapTrap(const ScapTrap& other);
+	~ScapTrap();
+	ScapTrap& operator=(const ScapTrap& other);
+	
+	void attack(const std::string& target);
+	void guardGate();
+protected:
+	bool	gateKeeperMode;
 };
 
 #endif

@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   FrogTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/06 18:56:28 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/06 18:57:45 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef FROGTRAP_HPP
+# define FROGTRAP_HPP
 
-#include <iostream>
-#include <string>
+#include "ClapTrap.hpp"
 
-class	ClapTrap 
+class	FrogTrap : public ClapTrap
 {
-public :
-	ClapTrap();
-	ClapTrap(const std::string& name);
-	ClapTrap(const ClapTrap& other);
-	ClapTrap& operator=(const ClapTrap& other);
-	virtual ~ClapTrap();
+public:
+	FrogTrap();	
+	FrogTrap(const std::string& name);
+	FrogTrap(const FrogTrap& other);
+	~FrogTrap();
+	FrogTrap& operator=(const FrogTrap& other);
 
-	virtual void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-
-protected :
-	const std::string	name;
-	unsigned int		hitPoints;
-	unsigned int		energyPoints;
-	unsigned int		attackDamage;
+	void highFivesGuys(void);	
 };
 
 #endif
