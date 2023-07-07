@@ -2,7 +2,7 @@ NAME = DiamondTrap
 
 CXX = c++
 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 SRCS = main.cpp ClapTrap.cpp FrogTrap.cpp ScapTrap.cpp DiamondTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)

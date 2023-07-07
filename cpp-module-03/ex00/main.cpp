@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/06 17:19:18 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/07 15:08:31 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,9 @@ int main(){
 	a.beRepaired(10);
 	a.attack("SPONGE");
 	a.takeDamage(1000);
+	ClapTrap b = a;
+	b.attack("SPONGE");
+	ClapTrap c(a);
+	b.attack("SPONGE");
 	return 0;
 }

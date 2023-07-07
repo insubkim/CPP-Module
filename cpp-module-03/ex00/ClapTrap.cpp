@@ -6,13 +6,13 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/06 18:48:03 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/07 14:54:20 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : name("no name"), hitPoints(10), energyPoints(10), attackDamage(0) {
+ClapTrap::ClapTrap() : name("NULL"), hitPoints(10), energyPoints(10), attackDamage(0) {
 	std::cout << "Default ClapTrap :" + name + " is constructed" << std::endl;
 }
 

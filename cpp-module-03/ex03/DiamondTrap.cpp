@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/07 14:45:10 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/07 15:16:14 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ DiamondTrap::DiamondTrap() : ClapTrap("NULL_clap_trap"), ScapTrap(), FrogTrap(),
 
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other) :\
-	 ClapTrap(other.name + "_clap_name"), ScapTrap(other.name), FrogTrap(other.name) , 	name(other.name){
+	 ClapTrap(other.name + "_clap_name"), ScapTrap(other), FrogTrap(other) , 	name(other.name){
 	energyPoints = 50;
 	std::cout << "DiamondTrap :" + name + " is constructed" << std::endl;
 }
@@ -54,4 +54,5 @@ void	DiamondTrap::status() const{
 	std::cout << "hit :"  + std::to_string(hitPoints)<< std::endl;
 	std::cout << "energy :" + std::to_string(energyPoints)<< std::endl;
 	std::cout << "attackDamage :" + std::to_string(attackDamage) << std::endl;
+	std::cout << "mode :" << (gateKeeperMode ? "guardGate" : "not guardGate") << std::endl;
 }

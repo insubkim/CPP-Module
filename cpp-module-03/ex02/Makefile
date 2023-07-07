@@ -3,6 +3,7 @@ NAME = FrogTrap
 CXX = c++
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+
 SRCS = main.cpp ClapTrap.cpp FrogTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
