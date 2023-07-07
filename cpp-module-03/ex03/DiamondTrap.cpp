@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/07 15:16:14 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/07 15:33:33 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other){
 	return *this;
 }
 
-void	DiamondTrap::whoAmI() const{
+void	DiamondTrap::whoAmI(){
 	std::cout << "DiamondTrap name :" + name << std::endl;
 	std::cout << "ClapTrap name :" + ClapTrap::name << std::endl;
 }
