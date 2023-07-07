@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: insub <insub@student.42.fr>                +#+  +:+       +#+        */
+/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/07 12:35:09 by insub            ###   ########.fr       */
+/*   Updated: 2023/07/07 14:37:46 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@
 
 class   DiamondTrap : public ScapTrap, public FrogTrap
 {
-    
+public :
+	DiamondTrap();
+	DiamondTrap(const DiamondTrap& other);
+	DiamondTrap(const std::string &name);
+	~DiamondTrap();
+	DiamondTrap& operator=(const DiamondTrap& other);
+	
+	void	whoAmI() const;
+	void	status() const;
+private :
+	const std::string name;
 };
 #endif

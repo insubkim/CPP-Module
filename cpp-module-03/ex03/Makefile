@@ -1,13 +1,13 @@
-NAME = FrogTrap
+NAME = DiamondTrap
 
 CXX = c++
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
-SRCS = main.cpp ClapTrap.cpp FrogTrap.cpp
+SRCS = main.cpp ClapTrap.cpp FrogTrap.cpp ScapTrap.cpp DiamondTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-HEADER = ClapTrap.hpp FrogTrap.hpp
+HEADER = ClapTrap.hpp FrogTrap.hpp ScapTrap.hpp DiamondTrap.hpp
 
 %.o: %.cpp $(HEADER)
 	$(CXX) $(CXXFLAGS) -c $< -o $@

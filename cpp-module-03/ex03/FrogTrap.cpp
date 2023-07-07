@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/06 19:02:55 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/07 14:47:22 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@ FrogTrap::FrogTrap() : ClapTrap() {
 	hitPoints = 100;
 	energyPoints = 100;
 	attackDamage = 30;
-	std::cout << "Default FrogTrap :" + name + " is constructed" << std::endl;
+	std::cout << "Default FrogTrap :" + this->name + " is constructed" << std::endl;
 }
 FrogTrap::FrogTrap(const std::string& name) : ClapTrap(name) {
 	hitPoints = 100;
 	energyPoints = 100;
 	attackDamage = 30;
-	std::cout << "FrogTrap :" + name + " is constructed" << std::endl;
+	std::cout << "FrogTrap :" + this->name + " is constructed" << std::endl;
 };
 
 FrogTrap::FrogTrap(const FrogTrap& other) : ClapTrap(other.name) {
 	hitPoints = other.hitPoints;
 	energyPoints = other.energyPoints;
 	attackDamage = other.attackDamage;
-	std::cout << "FrogTrap :" + name + " is constructed" << std::endl;
+	std::cout << "FrogTrap :" + this->name + " is constructed" << std::endl;
 }
 
 FrogTrap::~FrogTrap(){

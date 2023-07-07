@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: insub <insub@student.42.fr>                +#+  +:+       +#+        */
+/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/07 12:32:56 by insub            ###   ########.fr       */
+/*   Updated: 2023/07/07 14:25:12 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	void attack(const std::string& target);
 	void guardGate();
 protected:
-	bool	gateKeeperMode;
+	bool			gateKeeperMode;
 };
 
 #endif

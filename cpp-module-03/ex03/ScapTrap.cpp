@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/06 18:59:24 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/07 14:47:11 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ ScapTrap::ScapTrap() : ClapTrap() {
 	energyPoints = 50;
 	attackDamage = 20;
 	gateKeeperMode = false;
-	std::cout << "Default ScapTrap :" + name + " is constructed" << std::endl;
+	std::cout << "Default ScapTrap :" + this->name + " is constructed" << std::endl;
 }
 ScapTrap::ScapTrap(const std::string& name) : ClapTrap(name) {
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
 	gateKeeperMode = false;
-	std::cout << "ScapTrap :" + name + " is constructed" << std::endl;
+	std::cout << "ScapTrap :" + this->name + " is constructed" << std::endl;
 };
 
 ScapTrap::ScapTrap(const ScapTrap& other) : ClapTrap(other.name) {
@@ -32,7 +32,7 @@ ScapTrap::ScapTrap(const ScapTrap& other) : ClapTrap(other.name) {
 	energyPoints = other.energyPoints;
 	attackDamage = other.attackDamage;
 	gateKeeperMode = other.gateKeeperMode;
-	std::cout << "ScapTrap :" + name + " is constructed" << std::endl;
+	std::cout << "ScapTrap :" + this->name + " is constructed" << std::endl;
 }
 
 ScapTrap::~ScapTrap(){
@@ -53,7 +53,9 @@ void ScapTrap::attack(const std::string& target){
 	}else if (gateKeeperMode){
 		std::cout << "ScapTrap :" + name + " is gate keeper mode, I can't attack" << std::endl;
 	}else{
-		ClapTrap::attack(target);
+		std::cout << name + " attacks " + target + ", causing " + \
+		std::to_string(attackDamage) + " points of damage!" << std::endl;	
+		energyPoints--;
 	}
 }
 
