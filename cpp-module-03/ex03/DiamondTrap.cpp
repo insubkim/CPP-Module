@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: insub <insub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/07 15:33:33 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/08 16:12:09 by insub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	DiamondTrap::whoAmI(){
 }
 
 
-void	DiamondTrap::status() const{
+void	DiamondTrap::status(){
 	std::cout << "DiamondTrap status" << std::endl;
 	whoAmI();
 	std::cout << "ScapTrap name :"  + ScapTrap::name << std::endl;
