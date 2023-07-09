@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   FrogTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/04 17:52:16 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/07 13:57:42 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#ifndef FROGTRAP_HPP
+# define FROGTRAP_HPP
 
-#include <iostream>
-#include <cmath>
+#include "ClapTrap.hpp"
 
-class Fixed
+class	FrogTrap : public virtual ClapTrap
 {
-public :
-	Fixed();
-	Fixed(const Fixed &other);
-	Fixed(const int num);
-	Fixed(const float num);
-	Fixed &operator =(const Fixed &other);
-	~Fixed();
-	
-	int		getRawBits() const;
-	void	setRawBits(int const raw);
-	int		toInt() const;
-	float	toFloat() const;
-private :
-	int	num;
-	static const int fractionalBits = 8;
+public:
+	FrogTrap();	
+	FrogTrap(const std::string& name);
+	FrogTrap(const FrogTrap& other);
+	virtual ~FrogTrap();
+	FrogTrap& operator=(const FrogTrap& other);
+
+	void highFivesGuys(void);
 };
 
-std::ostream&	operator<<(std::ostream& o, const Fixed &f);
-
 #endif
-

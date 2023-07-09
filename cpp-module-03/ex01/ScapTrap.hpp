@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ScapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: insub <insub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/04 13:13:03 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/07 12:25:10 by insub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#ifndef SCAPTRAP_HPP
+# define SCAPTRAP_HPP
 
-#include <iostream>
+#include "ClapTrap.hpp"
 
-class Fixed
+class	ScapTrap : public ClapTrap
 {
-public :
-	Fixed();
-	Fixed(const Fixed &other);
-	Fixed &operator =(const Fixed &other);
-	~Fixed();
+public:
+	ScapTrap();	
+	ScapTrap(const std::string& name);
+	ScapTrap(const ScapTrap& other);
+	~ScapTrap();
+	ScapTrap& operator=(const ScapTrap& other);
 	
-	int		getRawBits() const;
-	void	setRawBits(int const raw);
-private :
-	int	num;
-	static const int fractionalBits = 8;
+	void attack(const std::string& target);
+	void guardGate();
+protected:
+	bool	gateKeeperMode;
 };
 
 #endif
-

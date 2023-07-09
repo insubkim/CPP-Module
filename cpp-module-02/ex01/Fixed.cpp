@@ -6,7 +6,7 @@
 /*   By: inskim <inskim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/28 22:05:24 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/10 02:00:18 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,13 @@ Fixed::Fixed() : num(0){
 
 
 Fixed::Fixed(const int num){
-	this->num = num << 8;
+	std::cout << "Const int constructor called" << std::endl;
+	this->num = num << fractionalBits;
 }
 
 Fixed::Fixed(const float num){
-	double tmp = num;
-	this->num = (int)num;
-	tmp -= (int)num;
-	for (int i = 0; i < 8; i++){
-		this->num = this->num << 1;
-		tmp *= 2;
-		if (tmp >= 1){
-			this->num += 1;
-			tmp -= 1;
-		}
-	}
+	std::cout << "Const float constructor called" << std::endl;
+	this->num = roundf(num * (1 << fractionalBits));
 }
 
 Fixed::Fixed(const Fixed &other) : num(other.getRawBits()){
@@ -59,18 +51,14 @@ void	Fixed::setRawBits(int const raw){
 }
 
 int		Fixed::toInt() const{
-	return num >> 8;
+	return toFloat();
 }
 
 float	Fixed::toFloat() const{
-	float f = 0;
-	int	_integer = toInt();
-	f += _integer;
-	int	_f = num & 0x000000FF;
-	double tmp = 1;
-	for (int n = 7; n >= 0; n--){
-		tmp /= 2;
-		f += ((_f & (1 << n)) ? 1 : 0) * tmp;
-	}
-	return f;
+	return num / (float)(1 << fractionalBits);
+}
+
+std::ostream&	operator<<(std::ostream& o, const Fixed &f){
+	std::cout << f.toFloat(); 
+	return o;
 }

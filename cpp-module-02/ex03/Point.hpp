@@ -1,41 +1,34 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/04 17:52:16 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/04 17:51:16 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#ifndef POINT_HPP
+# define POINT_HPP
 
-#include <iostream>
-#include <cmath>
+#include "Fixed.hpp"
 
-class Fixed
+class	Point
 {
 public :
-	Fixed();
-	Fixed(const Fixed &other);
-	Fixed(const int num);
-	Fixed(const float num);
-	Fixed &operator =(const Fixed &other);
-	~Fixed();
-	
-	int		getRawBits() const;
-	void	setRawBits(int const raw);
-	int		toInt() const;
-	float	toFloat() const;
+	Point();
+	Point(const Fixed& x, const Fixed& y);
+	Point(const Point& other);
+	~Point();
+	const Fixed& getX() const;
+	const Fixed& getY() const;
 private :
-	int	num;
-	static const int fractionalBits = 8;
+	const Fixed x;
+	const Fixed y;
+	Point& operator=(const Point& other);
 };
 
-std::ostream&	operator<<(std::ostream& o, const Fixed &f);
-
 #endif
-

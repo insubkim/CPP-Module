@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: insub <insub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/04 13:13:03 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/08 16:12:16 by insub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-#include <iostream>
+#include "ScapTrap.hpp"
+#include "FrogTrap.hpp"
 
-class Fixed
+class   DiamondTrap : public ScapTrap, public FrogTrap
 {
 public :
-	Fixed();
-	Fixed(const Fixed &other);
-	Fixed &operator =(const Fixed &other);
-	~Fixed();
+	DiamondTrap();
+	DiamondTrap(const DiamondTrap& other);
+	DiamondTrap(const std::string &name);
+	~DiamondTrap();
+	DiamondTrap& operator=(const DiamondTrap& other);
 	
-	int		getRawBits() const;
-	void	setRawBits(int const raw);
+	void	whoAmI();
+	void	status();
 private :
-	int	num;
-	static const int fractionalBits = 8;
+	const std::string name;
 };
-
 #endif
-

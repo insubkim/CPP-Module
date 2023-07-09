@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: insub <insub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/07/04 13:13:03 by inskim           ###   ########.fr       */
+/*   Updated: 2023/07/08 16:13:20 by insub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#include "DiamondTrap.hpp"
 
-#include <iostream>
 
-class Fixed
-{
-public :
-	Fixed();
-	Fixed(const Fixed &other);
-	Fixed &operator =(const Fixed &other);
-	~Fixed();
+int main(){
+	DiamondTrap a("BOB");
+	a.takeDamage(10);
+	a.guardGate();
+	a.attack("SPONGE");
+	a.status();
 	
-	int		getRawBits() const;
-	void	setRawBits(int const raw);
-private :
-	int	num;
-	static const int fractionalBits = 8;
-};
-
-#endif
-
+	DiamondTrap b("SQUID");
+	b = a;
+	b.status();
+	b.attack("SPONGE");
+	return 0;
+}
