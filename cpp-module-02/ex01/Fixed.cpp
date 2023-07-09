@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inskim <inskim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: inskim <inskim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 05:12:43 by inskim            #+#    #+#             */
-/*   Updated: 2023/06/29 19:47:50 by inskim           ###   ########.fr       */
+/*   Updated: 2023/06/28 22:05:24 by inskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ Fixed::Fixed(const int num){
 }
 
 Fixed::Fixed(const float num){
-	float tmp = num;
-	this->num = tmp;
+	double tmp = num;
+	this->num = (int)num;
 	tmp -= (int)num;
 	for (int i = 0; i < 8; i++){
 		this->num = this->num << 1;
