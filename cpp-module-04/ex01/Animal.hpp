@@ -20,17 +20,14 @@
 class Animal
 {
 public :
+    virtual ~Animal();
+    const std::string& getType() const;
+    virtual void makeSound() const = 0;
+protected :
     Animal();
     Animal(const Animal& other);
-    virtual ~Animal();
     const Animal& operator=(const Animal& other);
-
-    const std::string& getType() const;
-    virtual void makeSound() const;
-protected :
     std::string type;
-    Brain*      brain;
-
     Animal(const std::string type);
 };
 

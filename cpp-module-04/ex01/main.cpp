@@ -14,15 +14,29 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-
 int main()
 {
-const Animal* i = new Cat();
-const Animal* k = i; 
-delete i;
+	const Animal* j = new Dog();
+	const Animal* jj = new Cat();
+	delete j;//should not create a leak
+	delete jj;
 
-k->makeSound();
-delete k;
-
-return 0;
+	std::cout << "\n\n\n-------init-----\n\n" << std::endl;
+	const Animal *zoo[10];
+	std::cout << "\n\n\n-------new-----\n\n" << std::endl;
+	for (int i = 0; i < 5; i++){
+		zoo[i] = new Dog();
+	}
+	for (int i = 5; i < 10; i++){
+		zoo[i] = new Cat();
+	}
+	std::cout << "\n\n\n-------makeSound-----\n\n" << std::endl;
+	for (int i = 0; i < 10; i++){
+		zoo[i]->makeSound();
+	}
+	std::cout << "\n\n\n-------delete-----\n\n" << std::endl;
+	for (int i = 0; i < 10; i++){
+		delete zoo[i];
+	}
+	return 0;
 }

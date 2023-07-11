@@ -25,13 +25,13 @@ int main()
     j->makeSound();
     meta->makeSound();
 
-    const WrongAnimal* WrongI = new WrongCat();
-    std::cout << WrongI->getType() << " " << std::endl;
-    WrongI->makeSound();
+    const WrongAnimal* wrong = new WrongCat();
+    std::cout << wrong->getType() << " " << std::endl;
+    wrongI->makeSound();
 
     delete meta;
     delete i;
     delete j;
-    delete WrongI;
+    delete wrong;
     return 0;
 }
