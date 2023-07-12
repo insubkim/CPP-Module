@@ -18,9 +18,7 @@ Cat::Cat() : Animal("Cat"){
 }
 
 Cat::Cat(const Cat& other) : Animal(other.type) {
-    brain = new Brain();
-    for (int i = 0; i < 100; i++)
-        brain->setIndexIdea(i, other.brain->getIndexIdea(i));
+    brain = new Brain(other.brain);
     std::cout << "Cat Copy Constructor called" << std::endl;
 }
 
@@ -36,9 +34,7 @@ const Cat& Cat::operator=(const Cat& other){
     type = other.type;
     if (brain)
         delete brain;
-    brain = new Brain();
-    for (int i = 0; i < 100; i++)
-        brain->setIndexIdea(i, other.brain->getIndexIdea(i));
+    brain = new Brain(other.brain);
     return *this;
 }
 
